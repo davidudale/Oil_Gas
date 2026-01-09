@@ -1,4 +1,5 @@
 import React from "react";
+import Rig from "../Assets/rig.jpg";
 
 const Hero = () => {
   return (
@@ -6,7 +7,7 @@ const Hero = () => {
       {/* Background Image / Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1542060717-1738b295ca88?q=80&w=2070&auto=format&fit=crop"
+          src={Rig}
           alt="Oil rig at sunset"
           className="w-full h-full object-cover"
         />

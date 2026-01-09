@@ -1,12 +1,13 @@
 
 import React from 'react';
+import wind from '../Assets/wind.jpg';
 
 const Sustainability = () => {
   return (
     <section id="sustainability" className="py-32 bg-slate-900 overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[40%] h-full opacity-10">
         <img 
-          src="https://images.unsplash.com/photo-1466611653911-954ffec13f18?q=80&w=2070&auto=format&fit=crop" 
+          src={wind} 
           alt="Wind turbines" 
           className="w-full h-full object-cover grayscale"
         />
