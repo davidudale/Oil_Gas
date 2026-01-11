@@ -1,6 +1,6 @@
 
 import React from 'react';
-import wind from '../Assets/wind.jpg';
+import wind from '../../assets/wind.jpg';
 
 const Sustainability = () => {
   return (

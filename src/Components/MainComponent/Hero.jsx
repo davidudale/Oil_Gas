@@ -1,5 +1,5 @@
 import React from "react";
-import Rig from "../Assets/rig.jpg";
+import Rig from '../../assets/rig.jpg';
 
 const Hero = () => {
   return (

@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Navbar Component
 // Props: scrolled (boolean) - indicates if the page has been scrolled past a certain point
@@ -7,6 +8,7 @@ import React, { useState } from 'react';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: 'Solutions', href: '#services' },
@@ -27,7 +29,7 @@ const Navbar = () => {
                 <div className="w-3 h-3 bg-white rounded-full -rotate-45"></div>
               </div>
               <span className="text-2xl font-syncopate font-bold tracking-tighter text-white">
-                VANGUARD<span className="text-orange-500">.</span>
+                InspectPro<span className="text-orange-500">.</span>
               </span>
             </div>
           </div>
@@ -44,7 +46,7 @@ const Navbar = () => {
               </a>
             ))}
               <button 
-                onClick=""
+                onClick={() => navigate("/login")}
                 className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-sm text-sm font-bold uppercase tracking-widest transition-all transform hover:scale-105"
               >
                 Login
