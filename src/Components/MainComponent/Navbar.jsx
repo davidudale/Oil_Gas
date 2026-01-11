@@ -81,9 +81,12 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <button className="w-full bg-orange-600 text-white px-6 py-4 rounded-sm font-bold uppercase tracking-widest mt-4">
-              Contact Us
-            </button>
+            <button 
+                onClick={() => navigate("/login")}
+                className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-sm text-sm font-bold uppercase tracking-widest transition-all transform hover:scale-105"
+              >
+                Login
+              </button>
           </div>
         </div>
       )}
