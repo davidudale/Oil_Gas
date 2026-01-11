@@ -23,7 +23,7 @@ const InspectionDashboard = () => {
           <div className="hidden md:flex items-center space-x-4">
             <span className="text-slate-400 px-4 py-1 text-sm font-bold capitalize tracking-widest">Inspector</span>
             <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-1.5 rounded-sm text-xs font-bold uppercase tracking-widest transition-all hover:scale-105">
-              Generate Report
+              Start Inspection
             </button>
             <button className="bg-red-900/40 hover:bg-red-700 text-white px-4 py-1.5 rounded-sm text-xs font-bold uppercase tracking-widest transition-all">
               Logout
@@ -43,7 +43,7 @@ const InspectionDashboard = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-slate-800 bg-slate-900 p-4 space-y-4 flex flex-col">
             <button className="w-full text-left px-2 py-2 text-sm text-slate-300">Supervisor</button>
-            <button className="w-full bg-orange-600 text-white p-2 rounded-sm text-xs font-bold uppercase">Generate Report</button>
+            <button className="w-full bg-orange-600 text-white p-2 rounded-sm text-xs font-bold uppercase">Start Inspection</button>
             <button className="w-full bg-red-900 text-white p-2 rounded-sm text-xs font-bold uppercase">Logout</button>
           </div>
         )}
@@ -71,6 +71,18 @@ const InspectionDashboard = () => {
           </div>
           
           {/* Example Sidebar Icons for Mobile */}
+          <div className="flex flex-col items-center lg:items-start p-4 space-y-6">
+             <div className="lg:flex items-center gap-3 text-slate-400 hover:text-orange-500 cursor-pointer">
+                <FileText size={20} />
+                <span className="hidden lg:block text-sm">Inspections</span>
+             </div>
+          </div>
+          <div className="flex flex-col items-center lg:items-start p-4 space-y-6">
+             <div className="lg:flex items-center gap-3 text-slate-400 hover:text-orange-500 cursor-pointer">
+                <FileText size={20} />
+                <span className="hidden lg:block text-sm">Inspections</span>
+             </div>
+          </div>
           <div className="flex flex-col items-center lg:items-start p-4 space-y-6">
              <div className="lg:flex items-center gap-3 text-slate-400 hover:text-orange-500 cursor-pointer">
                 <FileText size={20} />
