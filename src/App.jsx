@@ -9,6 +9,7 @@ import { ProtectedRoute } from "./Components/Auth/ProtectedRoute.jsx";
 import AdminDashboard from "./Components/Page/AdminDashboard.jsx";
 import Supervisor from "./Components/Page/SupervisorDashboard.jsx";
 import Unauthorized from "./Components/Page/UnauthorizedPage.jsx";
+import InspectionDashboard from "./Components/Page/InspectionDashboard.jsx";
 
 function App() {
   return (
@@ -19,6 +20,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
+
+         {/* Inspector & Above */}
+        <Route
+          path="/inspectionDashboard"
+          element={
+            <ProtectedRoute
+              allowedRoles={["Inspector", "Supervisor", "Manager", "Admin"]}
+            >
+              <InspectionDashboard />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Supervisor & Above */}
         <Route

@@ -28,7 +28,7 @@ const Login = () => {
         if (role === "Admin") navigate("/admin-dashboard");
         else if (role === "Manager") navigate("/manager-dashboard");
         else if (role === "Supervisor") navigate("/SupervisorDashboard");
-        else navigate("/inspector-dashboard");
+        else navigate("/inspectionDashboard");
       }
     } catch (error) {
       toast.error("Login failed: " + error.message);
