@@ -28,6 +28,7 @@ const Login = () => {
         if (role === "Admin") navigate("/admin-dashboard");
         else if (role === "Manager") navigate("/manager-dashboard");
         else if (role === "Supervisor") navigate("/SupervisorDashboard");
+        
         else navigate("/inspectionDashboard");
       }
     } catch (error) {
