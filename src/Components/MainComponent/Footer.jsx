@@ -69,6 +69,7 @@ const Footer = () => {
           <p className="text-slate-500 justify-center text-xs font-medium">
             © Powered by Starwort and Kane Technologies.
           </p>
+          
           <div className="flex space-x-8">
             <a href="#" className="text-slate-500 hover:text-white transition-colors text-xs font-medium">Privacy Policy</a>
             <a href="#" className="text-slate-500 hover:text-white transition-colors text-xs font-medium">Terms of Service</a>
