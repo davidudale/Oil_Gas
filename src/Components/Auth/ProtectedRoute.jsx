@@ -22,6 +22,14 @@ export const ProtectedRoute = ({ children, allowedRoles }) => {
   if (loading) return <div>Loading...</div>;
 
   return allowedRoles.includes(role) ? children : <Navigate to="/Login" />;
+
+const hasAccess = allowedRoles.includes(role);
+
+  if (!hasAccess) {
+    // Keep them logged in, but deny entry to this specific route
+    return <Navigate to="/unauthorized" replace />;
+  }
+
 };
 
 
