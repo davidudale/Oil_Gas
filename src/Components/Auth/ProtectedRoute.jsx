@@ -1,7 +1,7 @@
-import { Navigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { auth, db } from './firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { auth, db } from "./firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 export const ProtectedRoute = ({ children, allowedRoles }) => {
   const [role, setRole] = useState(null);
@@ -19,18 +19,21 @@ export const ProtectedRoute = ({ children, allowedRoles }) => {
     checkRole();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="h-screen bg-slate-950 flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-orange-600 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
 
   return allowedRoles.includes(role) ? children : <Navigate to="/Login" />;
 
-const hasAccess = allowedRoles.includes(role);
+  const hasAccess = allowedRoles.includes(role);
 
   if (!hasAccess) {
     // Keep them logged in, but deny entry to this specific route
     return <Navigate to="/unauthorized" replace />;
   }
-
 };
-
 
 export default ProtectedRoute;
