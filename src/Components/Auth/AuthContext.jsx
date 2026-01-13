@@ -1,25 +1,46 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
+import { auth } from '../Auth/firebase'; // Ensure this path is correct
+import { onAuthStateChanged } from 'firebase/auth';
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  // We'll initialize with null to represent a logged-out state
-  const [user, setUser] = useState(null); 
-  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(null);
+  // 1. Initialize loading as TRUE so the app waits for Firebase
+  const [loading, setLoading] = useState(true);
 
-  // A dummy login function to simulate setting a role
-  const login = (role) => {
-    setUser({ id: '1', name: 'Alex', role: role });
+  useEffect(() => {
+    // 2. Listen for actual Firebase auth changes
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        // If user exists, set them in your context
+        // You can also fetch their 'role' from Firestore here later
+        setUser({
+          uid: firebaseUser.uid,
+          email: firebaseUser.email,
+          name: firebaseUser.displayName || 'Alex',
+          role: 'Admin' // You can make this dynamic later
+        });
+      } else {
+        setUser(null);
+      }
+      setLoading(false); // 3. Firebase has responded, stop loading
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
+
+  const logout = async () => {
+    await auth.signOut();
+    setUser(null);
   };
 
-  const logout = () => setUser(null);
-
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
-      {children}
+    <AuthContext.Provider value={{ user, logout, loading }}>
+      {!loading && children} 
     </AuthContext.Provider>
   );
 };
 
-// Custom hook for easy access
 export const useAuth = () => useContext(AuthContext);
