@@ -53,7 +53,7 @@ const AdminDashboard = () => {
   return (
     <div className="flex flex-col min-h-screen bg-slate-950 text-slate-200">
       <AdminNavbar />
-      <div className="flex flex-1">
+      <div className="flex flex-1 min-h-screen">
         <AdminSidebar />
 
         <main className="flex-1 ml-16 lg:ml-64 p-4 lg:p-8 min-h-[calc(100vh-65px)] overflow-y-auto bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-slate-900/50 via-slate-950 to-slate-950">
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
                   System Overview
                 </h1>
                 <p className="text-slate-400 text-sm mt-1">
-                  Welcome back. Here is what your assistant has been monitoring.
+                  Welcome back.
                 </p>
               </div>
               <button className="hidden md:flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-bold text-sm transition-all shadow-lg shadow-orange-900/20">

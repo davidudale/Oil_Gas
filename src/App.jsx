@@ -10,6 +10,7 @@ import AdminDashboard from "./Components/Page/AdminDashboard.jsx";
 import Supervisor from "./Components/Page/SupervisorDashboard.jsx";
 import Unauthorized from "./Components/Page/UnauthorizedPage.jsx";
 import InspectionDashboard from "./Components/Page/InspectionDashboard.jsx";
+import UserPage from "./Components/Dashboards/AdminFiles/UserManagement/UserPage.jsx";
 
 function App() {
   return (
@@ -49,6 +50,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={["Admin"]}>
               <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <ProtectedRoute allowedRoles={["Admin"]}>
+              <UserPage />
             </ProtectedRoute>
           }
         />

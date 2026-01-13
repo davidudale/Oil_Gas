@@ -18,7 +18,7 @@ const sidebarLinks = [
   {
     name: "Dashboard",
     icon: <LayoutDashboard size={20} />,
-    href: "/admin/dashboard",
+    href: "/admin-dashboard",
     active: true,
   },
   {
@@ -51,7 +51,7 @@ const sidebarLinks = [
 
 const AdminSidebar = () => {
   return (
-    <aside className="w-16 lg:w-64 fixed border-r border-slate-800 bg-slate-900/20 transition-all duration-300 flex flex-col">
+    <aside className="w-16 min-h-screen lg:w-64 fixed border-r border-slate-800 bg-slate-900/20 transition-all duration-300 flex flex-col">
       <div className="p-4 lg:p-6 border-b border-slate-800/50">
         <div className="flex items-center gap-4">
           <div className="relative shrink-0">
