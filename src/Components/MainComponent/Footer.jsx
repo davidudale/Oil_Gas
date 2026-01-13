@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="w-3 h-3 bg-white rounded-full -rotate-45"></div>
               </div>
               <span className="text-2xl font-syncopate font-bold tracking-tighter text-white">
-                VANGUARD<span className="text-orange-500">.</span>
+                InspectPro<span className="text-orange-500">.</span>
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed mb-8 max-w-sm">

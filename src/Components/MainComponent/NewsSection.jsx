@@ -4,7 +4,7 @@ import React from 'react';
 const news = [
   {
     category: 'Innovation',
-    title: 'Vanguard Announces Breakthrough in Subsea Drilling Precision',
+    title: 'InspectPro Announces Breakthrough in Subsea Drilling Precision',
     date: 'Oct 24, 2024',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop'
   },

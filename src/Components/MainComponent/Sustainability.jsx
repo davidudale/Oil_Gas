@@ -22,7 +22,7 @@ const Sustainability = () => {
               <span className="text-orange-500">RESPONSIBILITY</span>
             </h3>
             <p className="text-slate-300 text-lg leading-relaxed mb-10">
-              At Vanguard Energy, we believe the energy transition is an opportunity for innovation. We are investing billions in Carbon Capture and Sequestration (CCS) and hydrogen production to ensure that as we meet today's energy needs, we don't compromise tomorrow.
+              At InspectPro Energy, we believe the energy transition is an opportunity for innovation. We are investing billions in Carbon Capture and Sequestration (CCS) and hydrogen production to ensure that as we meet today's energy needs, we don't compromise tomorrow.
             </p>
             
             <div className="space-y-6">

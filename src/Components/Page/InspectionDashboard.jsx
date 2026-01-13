@@ -64,7 +64,7 @@ const InspectionDashboard = () => {
               </div>
               <div className="hidden lg:block overflow-hidden">
                 <p className="text-sm font-bold text-white uppercase tracking-tight truncate">
-                  Alex Vanguard
+                  Alex InspectPro
                 </p>
               </div>
             </div>

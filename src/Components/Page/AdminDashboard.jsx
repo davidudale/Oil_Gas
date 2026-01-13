@@ -43,7 +43,7 @@ const AdminDashboard = () => {
               </div>
               <div className="hidden lg:block overflow-hidden">
                 <p className="text-sm font-bold text-white uppercase tracking-tight truncate">
-                  Alex Vanguard
+                  Alex InspectPro
                 </p>
                 <div className="flex items-center gap-1.5 mt-0.5"></div>
               </div>
