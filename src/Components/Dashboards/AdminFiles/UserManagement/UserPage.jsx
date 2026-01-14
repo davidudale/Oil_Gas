@@ -11,29 +11,22 @@ const UserPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // NAKED QUERY: Direct reference to the collection with no filters or sorting
-    const usersRef = collection(db, "users");
+  const usersCollection = collection(db, "users");
+  
+  const unsubscribe = onSnapshot(usersCollection, (snapshot) => {
+    // This creates a BRAND NEW array of all documents currently in the collection
+    const allUsers = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    
+    console.log("Total users fetched:", allUsers.length); // Debugging line
+    setUsers(allUsers);
+    setLoading(false);
+  });
 
-    // Real-time listener
-    const unsubscribe = onSnapshot(usersRef, (snapshot) => {
-      // Mapping documents into an array
-      const allUsers = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      
-      console.log("Naked Query Result - Docs found:", allUsers.length);
-      console.log("Raw Data:", allUsers); // Check this in your browser console
-      
-      setUsers(allUsers);
-      setLoading(false);
-    }, (error) => {
-      console.error("Firestore Error:", error.message);
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
+  return () => unsubscribe();
+}, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-950 text-slate-200">
